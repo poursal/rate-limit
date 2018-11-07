@@ -52,7 +52,7 @@ final class IpAddressOrUserIdentityResolver extends AbstractIdentityResolver
         $authUserId   = $request->getAttribute($this->authKeyName);
 
         if ( !empty($authUserId) ) {
-            return USER_KEY_PREFIX . $authUserId;
+            return self::USER_KEY_PREFIX . $authUserId;
         }
 
         if ( !empty($serverParams['REMOTE_ADDR']) && in_array($serverParams['REMOTE_ADDR'], $this->loadBalancers) ) {
